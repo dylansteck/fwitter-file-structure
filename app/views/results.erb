@@ -6,9 +6,12 @@
 	<title>Fwitter</title>
 	</head>
   <body>
-    <h1>Fwitter</h1>
+    <center><h1>Fwitter</h1>
      Any similarties to Twitter are purely coincidental
-     <p><%= "#{@tweet.username} says:  #{@tweet.content}" %></p>
+			<img src="/fwitter.png" style="width:70px; height:60px; top:1%;"></center>
+		<center><div id="tweetresult"><p><%=@tweet.username%> said:
+			<%=@tweet.content%></p></div></center>
+     
   </body>
   
 </html>

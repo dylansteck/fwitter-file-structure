@@ -11,5 +11,9 @@ class ApplicationController < Sinatra::Base
 		erb :index
   end
 
-  
+	post '/results' do
+		@tweet = Tweet.new(params[:username], params[:tweet])
+		#params 
+		erb :results
+	end
 end

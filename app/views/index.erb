@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <head></head>
+  <head>
+		<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<title>Fwitter</title>
+	</head>
   <body>
-		<h1>Write a tweet!</h1>
-	<form method="POST" action="/tweets.erb">
-	<form> <center>
+		 <center><h1>Fwitter</h1>
+     Any similarties to Twitter are purely coincidental
+			 <img src="/fwitter.png" style="width:70px; height:60px; top:1%;">
+		<h1>Write a tweet!</h1></center>
+	<form id="formone" method="POST" action="/results"> <center>
 		username: <br><br>
-		<input type="text" name="password" placeholder="username">
-		<br><br>
+<input type="text" name="username" placeholder="username"> 
+		<br><br><br><br>
 		tweet: <br><br>
-		<input type="text" name="tweet" placeholder="tweet here!">
+		<TEXTAREA form="formone" name="tweet"> </TEXTAREA>
+<!-- 		<input type="textarea" name="tweet" placeholder="tweet here!">  -->
 		<br><br>
 		<input type="submit" value="submit">
-		</form></center>
+		</center>
 		</form>
   </body>
 </html>

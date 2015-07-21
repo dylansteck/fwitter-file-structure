@@ -1,0 +1,12 @@
+body{
+	background-color:#e3e3e3;
+	font-family: 'Oswald', sans-serif;
+}
+
+#tweetresult {
+	background-color:#8383f2;
+	width:200px;
+	height:125px;
+   padding: 10px 40px; 
+	border-radius: 25px;
+}
