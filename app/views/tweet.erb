@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+		<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<title>Fwitter</title>
+	</head>
+  <body>
+		 <center><h1>Fwitter</h1>
+     Any similarties to Twitter are purely coincidental
+			 <img src="/fwitter.png" style="width:70px; height:60px; top:1%;">
+			 <h1>Hello <%=@user.username%>! Write a tweet!</h1></center>
+<center>
+	<form id="formone" method="POST" action="/results">
+		tweet: <br><br>
+		<TEXTAREA form="formone" name="tweet"> </TEXTAREA>
+		<br><br>
+		<input type="submit" value="submit">
+		</center>
+		</form>
+  </body>
+</html>

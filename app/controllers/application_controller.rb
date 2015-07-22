@@ -1,5 +1,6 @@
 require_relative "../../config/environment"
 require_relative "../models/tweet.rb"
+require_relative "../models/user.rb"
 class ApplicationController < Sinatra::Base
   
   set :views, "app/views"
@@ -10,9 +11,15 @@ class ApplicationController < Sinatra::Base
 #     erb :tweets
 		erb :index
   end
+	post '/tweet' do
+		@user= User.new(params[:username], params[:password])
+		#params
+		erb :tweet
+	end
 
 	post '/results' do
-		@tweet = Tweet.new(params[:username], params[:tweet])
+		@user= User.new(params[:username], params[:password])
+		@tweet = Tweet.new(params[:tweet])
 		#params 
 		erb :results
 	end
