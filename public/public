@@ -1,8 +1,10 @@
-/* normal */
-body{
+/*Normal stuff */
+*{
 	background-color:#e3e3e3;
 	font-family: 'Oswald', sans-serif;
 }
+
+
 
 #tweetresult {
 	background-color:#8383f2;
