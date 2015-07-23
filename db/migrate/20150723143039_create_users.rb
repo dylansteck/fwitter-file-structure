@@ -1,9 +1,15 @@
 class CreateUsers < ActiveRecord::Migration
-	def up :users do |t|
+	def up 
+		create_table :users do |t|
 		t.string :username
 		t.string :bio
 		t.string :password
-  end
+			end
+	end
+		
+		
 	def down
 		drop_table :username
+	end
+		
 end
