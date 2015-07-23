@@ -11,9 +11,22 @@
    padding: 10px 40px; 
 	border-radius: 25px;
 }
+.home {
+	margin-top:10px;
+	margin-left:15px;
+}
 nav{
 	top:-55px;
+	background-color:black;
 }
+h2{
+	background:transparent;
+	margin-right:-2em;
+}
+img {
+	background:transparent;
+}
+
 /* #navbar-header {
 	width:1000px;
 	height:100px;
@@ -23,16 +36,20 @@ nav{
 input {
 	 padding: 10px 40px; 
 	border-radius: 25px;
-	width:400px;
+	width:360px;
+	outline:none;
 }
-form{
+
+/* form{
 		padding-left:8em;
+	outline:none;
 }
 ul {
 	padding: 10px 40px; 
 	border-radius: 25px;
 	width:30em;
-}
+} */
+
 
 /*Use to change placehoder color*/
 ::-webkit-input-placeholder {

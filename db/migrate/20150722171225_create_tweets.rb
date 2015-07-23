@@ -4,11 +4,11 @@ class CreateTweets < ActiveRecord::Migration
     create_table :tweets do |t|
 			t.string :username
 			t.string :tweet
-			t.timestamps
+# 			t.timestamps
     end
   end
 	
   def down
-    drop_table :tweets
+	drop_table :tweets
   end
 end

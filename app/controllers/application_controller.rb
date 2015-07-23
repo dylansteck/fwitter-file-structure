@@ -6,7 +6,6 @@ class ApplicationController < Sinatra::Base
   set :public, "public"
   
   get "/" do
-		@tweets = Tweet.all
 		erb :index
   end
 
@@ -16,4 +15,5 @@ class ApplicationController < Sinatra::Base
 		@tweets = Tweet.all
 		erb :results
 	end
+	
 end
