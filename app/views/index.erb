@@ -13,21 +13,28 @@
 	<body>
 		<center>
 		<nav class="navbar navbar-default">
-			<h2>Fwitter</h2> <img src="icon_twitter.png" width=65px; height=60px;>
+			<h2>Fwitter</h2> 
 						<img src="IconTrans.png" class="homepic" width=65px;  height=60px; ALIGN=LEFT> <img src="icon_notifications.png" class="homepic" width=65px;  height=60px; ALIGN=LEFT> <img src="icon_profile.png" class="homepic" width=65px;  height=60px; ALIGN=LEFT></center>
   <div class="container-fluid">
   </div>
 </nav>
 		<center>
-<form id="formone" name="formone" method="POST" action="results">
+<form id="formone" name="formone" method="POST" action="/">
 
 
-<input type="text"  name="username" placeholder="Username">
-
+<input type="text" id="username" name="username" placeholder="Username">
 <input type="text" id="tweetytweet" name="tweet" placeholder="What's happening?">
+		<button type="submit" form="formone" value="Submit">Submit</button>
 		</form>
-	<button type="submit" form="formone" value="Submit">Submit</button>
-	
+<%@tweets.reverse_each do |tweet| %>
+			<div class="list">
+				<br>
+				<div id="list avatar" align="left"><img src="twitter-egg.jpg" width=50px; height=50px;> <%=tweet.username%></div> <%=tweet.tweet %> <%=#@tweet.created_at%> <hr></hr>
+				
+			</div>
+			
+			<%end %>
+
 		</center>
    
 

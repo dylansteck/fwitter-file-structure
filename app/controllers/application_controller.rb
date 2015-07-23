@@ -6,14 +6,17 @@ class ApplicationController < Sinatra::Base
   set :public, "public"
   
   get "/" do
-		erb :index
-  end
-
-	post '/results' do
 		@tweet = Tweet.new({:username => params[:username], :tweet => params[:tweet]})
 		@tweet.save
 		@tweets = Tweet.all
-		erb :results
+		erb :index
+  end
+
+	post '/' do
+			@tweet = Tweet.new({:username => params[:username], :tweet => params[:tweet]})
+		@tweet.save
+		@tweets = Tweet.all
+		erb :index
 	end
 	
 end
