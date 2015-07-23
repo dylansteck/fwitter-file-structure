@@ -17,6 +17,9 @@ body {
 	margin-top:10px;
 	margin-left:9px;
 }
+placeholder{
+	color:#8383f2;
+}
 nav{
 	top:-55px;
 	background-color:black;
