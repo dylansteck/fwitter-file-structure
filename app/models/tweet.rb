@@ -1,6 +1,6 @@
+require_relative "../models/user.rb"
 class Tweet < ActiveRecord::Base
 	belongs_to :user
-	has_many :tweets
 	
 	#Tweet.all
 	#Tweet.find

@@ -1,15 +1,25 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-			<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-		<title>Fwitter</title>
+		<title>Fwitter|Login</title>
+<!-- 			 <script>
+    $(document).ready(function(){
+      $(".us3r").blur(function(){
+            if ($(".us3r").val() != $(".us3r").val()) {
+              alert("Passwords do not match.")
+            }
+        });
+    });
+    </script> -->
 	</head>
+	
 	<body>
 		<center>
 		<nav class="navbar navbar-default">
@@ -18,17 +28,19 @@
   <div class="container-fluid">
   </div>
 </nav>
-		<center> 
-			<form action="/newuser"  id="formuser" name="formuser" method="post" accept-charset="utf-8">
+<div class= "Sign_Form">
+  <h1>Log in</h1>
+ 		<center> 
+			<form action="/login"  id="formlogin" name="formlogin" method="post" accept-charset="utf-8">
 				<input class="us3r" type="text" name="username" placeholder="Username" require>
-				<input class="b10" type="text" name="bio" placeholder="Bio" require>
 				<input class="passw0rd" type="password" name="password" placeholder="Password" require>
 				<br>
-			<button type="submit" form="formuser" value="Submit">Submit</button> 
+			<button type="submit" form="formlogin" value="Submit">Submit</button> 
 						</form>
+			
 		</center>
-   
+	
 
-
-	</body>
+</div>
+</body>
 </html>

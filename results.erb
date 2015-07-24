@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+		<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+		<link type="text/css" rel="stylesheet" href="/css/style.css">
+	<title>Fwitter</title>
+	</head>
+  <body>
+    <center><h1>Fwitter</h1>
+     Any similarties to Twitter are purely coincidental
+			<img src="/fwitter.png" style="width:70px; height:60px; top:1%;"></center>
+		<center><div id="tweetresult"><p><%=@tweet.username%> said:
+			<%=@tweet.tweet%>  <%=#@tweet.created_at.strftime("%d %b %y")%> </p>
+			</div>
+			<%=@tweets.all%>
+			<h3><button><a href="/">Go again!</a></button></h3>
+			</center>
+  </body>
+  
+</html>

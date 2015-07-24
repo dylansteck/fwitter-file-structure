@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+			<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<title>Fwitter</title>
+	</head>
+	<body>
+		<center>
+		<nav class="navbar navbar-default">
+			<h2>Fwitter</h2> 
+						<a href="/"><img src="IconTrans.png" class="homepic" width=65px;  height=60px; ALIGN=LEFT></a> <img src="icon_notifications.png" class="homepic" width=65px;  height=60px; ALIGN=LEFT> <img src="icon_profile.png" class="homepic" width=65px;  height=60px; ALIGN=LEFT></center>
+  <div class="container-fluid">
+  </div>
+</nav>
+		<center>
+<form id="formone" name="formone" method="POST" action="tweetandfield">
+
+<input type="text" id="tweetytweet" name="tweet" placeholder="What's happening?">
+		<button type="submit" form="formone" value="Submit">Submit</button>
+		</form>
+			<% @users.reverse.each do |x|%>
+			<div class="list" align="left"><img src="twitter-egg.jpg" width=50px; height=50px;> <%=x.username%> </div> 
+			<%end %>
+
+
+				<br>
+				<div class="list" align="left"><img src="twitter-egg.jpg" width=50px; height=50px;>  <div class="atname"><%@users.reverse.each do |z| %>
+					<%=z.username%>
+					<%end %></div> <div class="tweet"><% @tweets.reverse.each do |tweet|%>
+					<%=tweet.tweet%>
+					<%end %></div> </div> 
+
+				
+				
+
+
+		</center>
+   
+
+
+	</body>
+</html>
