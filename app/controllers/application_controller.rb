@@ -17,8 +17,8 @@ class ApplicationController < Sinatra::Base
   end
 	
 	post '/newuser' do
-		@user = User.new ({:username => params[:username], :bio => params[:bio], :password => params[:password]})
-		@user.save
+		@newuser = User.new ({:username => params[:username], :bio => params[:bio], :password => params[:password]})
+		@newuser.save
 		redirect ('/login')
 	end
 	
@@ -27,8 +27,11 @@ class ApplicationController < Sinatra::Base
 	end
 	
 	post '/login' do
-		@user = User.find_by ({:username => params[:username], :password => params[:password]})
+		@newuser = User.find_by ({:username => params[:username], :password => params[:password]})
 		@users = User.all
+			@tweet = Tweet.new({:username => params[:username], :tweet => params[:tweet]})
+		@tweet.save
+		@tweets = Tweet.all
 		if @user
 			session[:user] = @user.username  
 			erb :tweetandfield
@@ -38,6 +41,10 @@ class ApplicationController < Sinatra::Base
 	end
 	
 	get  '/tweetandfield' do
+			@newuser = User.new ({:username => params[:username], :bio => params[:bio], :password => params[:password]})
+		@users = User.all
+			@tweet = Tweet.new({:username => params[:username], :tweet => params[:tweet]})
+		@tweets = Tweet.all
 		erb :tweetandfield
 	end
 	
