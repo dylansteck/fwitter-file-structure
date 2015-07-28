@@ -30,13 +30,12 @@
 
 
 				<br>
-				<div class="list" align="left"><img src="twitter-egg.jpg" width=50px; height=50px;>  <div class="atname"><%@users.reverse_each do |z| %>
-					<%="@#{@user.username}"%>
-					<%end %></div> <div class="tweet"></div> </div> 
+			<% @tweets.reverse_each do |tweet|%>
+				<div class="list" align="left"><img src="twitter-egg.jpg" width=50px; height=50px;>  <div class="atname">
+					<%=tweet.username%> </div> <div class="tweet">
+					<%=tweet.tweet%></div> </div> 
 			
-			<%# @tweets.reverse_each do |tweet|%>
-					<%#=tweet.tweet%>
-					<%#end %>
+					<%end %>
 
 				
 				

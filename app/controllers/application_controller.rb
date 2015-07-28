@@ -6,17 +6,25 @@ class ApplicationController < Sinatra::Base
   set :views, "app/views"
   set :public, "public"
 	
-	configure do
-  enable :sessions
-   set :session_secret, "fwitter"
-	end
+  configure do
+    set :public_folder, 'public'
+    set :views, 'app/views'
+		enable :sessions
+    set :session_secret, "fwitter"
+  end
 	
 	get'/' do
-		@users = User.all
+		 if session[:user_id] == nil
+			 @tweets= Tweet.all
+			 erb :login
+		 else
+			 erb :index
+    end
 		erb :index
   end
 	
 	post '/newuser' do
+		
 		@newuser = User.new ({:username => params[:username], :bio => params[:bio], :password => params[:password]})
 		@newuser.save
 		redirect ('/login')
@@ -32,8 +40,8 @@ class ApplicationController < Sinatra::Base
 			@tweet = Tweet.new({:username => params[:username], :tweet => params[:tweet]})
 		@tweet.save
 		@tweets = Tweet.all
-		if @user
-			session[:user] = @user.username  
+		if @newuser
+			session[:user] = @newuser.username  
 			erb :tweetandfield
     else
       erb :error
@@ -43,16 +51,14 @@ class ApplicationController < Sinatra::Base
 	get  '/tweetandfield' do
 			@newuser = User.new ({:username => params[:username], :bio => params[:bio], :password => params[:password]})
 		@users = User.all
-			@tweet = Tweet.new({:username => params[:username], :tweet => params[:tweet]})
+			@tweet = Tweet.new({:username => session[:user], :tweet => params[:tweet]})
 		@tweets = Tweet.all
 		erb :tweetandfield
 	end
 	
 	post'/tweetandfield' do
-		@newuser = User.new ({:username => params[:username], :bio => params[:bio], :password => params[:password]})
+		@newuser = User.new ({:username => session[:user], :bio => params[:bio], :password => params[:password]})
 		@users = User.all
-			@tweet = Tweet.new({:username => params[:username], :tweet => params[:tweet]})
-		@tweet.save
 		@tweets = Tweet.all
 		erb :tweetandfield
 	end
