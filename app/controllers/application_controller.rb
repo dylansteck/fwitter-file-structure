@@ -15,51 +15,47 @@ class ApplicationController < Sinatra::Base
 	
 	get'/' do
 		 if session[:user_id] == nil
-			 @tweets= Tweet.all
-			 erb :login
-		 else
 			 erb :index
+		 else
+			 erb :tweetandfield
     end
 		erb :index
   end
 	
-	post '/newuser' do
-		
-		@newuser = User.new ({:username => params[:username], :bio => params[:bio], :password => params[:password]})
-		@newuser.save
-		redirect ('/login')
-	end
-	
-	get '/login' do
-		erb :login
-	end
-	
-	post '/login' do
-		@newuser = User.find_by ({:username => params[:username], :password => params[:password]})
+	post '/' do
+		@newuser = User.new ({:username => params[:username], :password => params[:password]})
 		@users = User.all
-			@tweet = Tweet.new({:username => params[:username], :tweet => params[:tweet]})
-		@tweet.save
-		@tweets = Tweet.all
+		@newuser.save
 		if @newuser
-			session[:user] = @newuser.username  
-			erb :tweetandfield
+			session[:user_id] = @newuser.id
+			redirect ("/tweetandfield")
     else
       erb :error
     end
 	end
 	
+
+	
+	
 	get  '/tweetandfield' do
-			@newuser = User.new ({:username => params[:username], :bio => params[:bio], :password => params[:password]})
 		@users = User.all
-			@tweet = Tweet.new({:username => session[:user], :tweet => params[:tweet]})
 		@tweets = Tweet.all
+		@user = User.find_by_id session[:user_id]
 		erb :tweetandfield
 	end
 	
 	post'/tweetandfield' do
-		@newuser = User.new ({:username => session[:user], :bio => params[:bio], :password => params[:password]})
-		@users = User.all
-		@tweets = Tweet.all
-		erb :tweetandfield
+		@tweet = Tweet.new({:username=> session[:username], :tweet => params[:tweet]})
+		@tweet.save
+		redirect ('/tweetandfield')
+	end
+	
+	get '/logout' do
+		 session[:user_id] = nil
+		redirect ('/')
+	end
+	
+	post '/logout' do
+		redirect('/')
 	end
 end

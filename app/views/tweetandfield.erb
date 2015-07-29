@@ -2,7 +2,7 @@
 <html>
 	<head>
 			<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/tweets.css">
 		<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -18,6 +18,9 @@
   <div class="container-fluid">
   </div>
 </nav>
+		<div class= "displayuser">
+			<%=@user.username %>
+		</div>
 		<center>
 <form id="formone" name="formone" method="POST" action="tweetandfield">
 
@@ -25,7 +28,7 @@
 		<button type="submit" form="formone" value="Submit">Submit</button>
 		</form>
 			<% @users.reverse_each do |x|%>
-			<div class="list" align="left"><img src="twitter-egg.jpg" width=50px; height=50px;> <%=x.username%> </div> 
+			<div class="list" align="left"><img src="twitter-egg.jpg" width=50px; height=50px;> <%=x.user_id%> </div> 
 			<%end %>
 
 

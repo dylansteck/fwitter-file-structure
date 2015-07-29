@@ -1,10 +1,9 @@
 class AddColumnToTweets < ActiveRecord::Migration
   def up
 		#create a comumn called user_id
-		add_column created_at created_at
-		add_column created_on created_on
+		add_column :tweets, :created_at, :string
+		add_column :tweets, :created_on, :string
   end
-end
 	def down
 	end
 end

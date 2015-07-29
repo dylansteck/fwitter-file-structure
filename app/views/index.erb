@@ -2,7 +2,8 @@
 <html>
 	<head>
 			<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css"> 
+		
 		<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -19,7 +20,7 @@
   </div>
 </nav>
 		<center> 
-			<div class= "Sign_Form">
+<!-- 			<div class= "Sign_Form">
   <h1>Log in</h1>
 			<form action="/login"  id="formlogin" name="formlogin" method="post" accept-charset="utf-8">
 				<input class="us3r" type="text" name="username" placeholder="Username" require>
@@ -33,7 +34,35 @@
 				<input class="passw0rd" type="password" name="password" placeholder="Password" require>
 				<br>
 			<button type="submit" form="formuser" value="Submit">Submit</button> 
-						</form>
+						</form> -->
+			 <input type="radio" checked id="toggle--login" name="toggle" class="ghost" />
+  <input type="radio" id="toggle--signup" name="toggle" class="ghost" />
+
+ 
+
+  <form class="form form--login framed" method="post" action="/" accept-charset="utf-8">
+    <input type="text" name="username" placeholder="Username" class="input input--top" />
+    <input type="password" name="password" placeholder="Password" class="input" />
+    <input type="submit" value="Log in" class="input input--submit" />
+    
+    <label for="toggle--signup" class="text text--small text--centered">New? <b>Sign up</b></label>
+  </form>
+  
+  <form class="form form--signup framed" method="post" action="/" accept-charset="utf-8">
+   
+
+    <input type="text" name="username"placeholder="Username" class="input input--top" />
+    <input type="text" name="bio" placeholder="Bio" class="input" />
+    <input type="password" name="password" placeholder="Password" class="input" />
+    <input type="submit" value="Sign up" class="input input--submit" />
+    
+    <label for="toggle--login" class="text text--small text--centered">Not new? <b>Log in</b></label>
+  </form>
+
+ 
+  
+
+  <div class="fullscreen-bg"></div>
 		</center>
    
 
